@@ -1,0 +1,1 @@
+SELECT Name FROM borrowers where Number_of_EMI_paid >= 2 ORDER BY Number_of_EMI_paid DESC 

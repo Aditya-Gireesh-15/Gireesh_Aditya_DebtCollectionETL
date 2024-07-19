@@ -1,0 +1,1 @@
+SELECT Name FROM borrowers ORDER BY Outstanding_Balance DESC Limit 10

@@ -1,0 +1,46 @@
+Data Engineering Assignment: Debt Collection ETL and Basic Analysis
+
+Extraction
+1. The required libraries were loaded
+2. Using pandas we have read the csv data file.
+
+Transformation
+1.In 'Repayment History' column the date format should be converted to dd/mm/yy format so that we can able to access them in future.
+2.Replaced the empty array"[]" with assumed date 28/2/3252, to just make the data loadable in the database.There are total of 775 records where the repayment history is missing. With this assumed date we can infer that they havent paid yet.
+3. It is found that the data were in string format, we have processed the data to be in dictionary form.
+4.we have defined a Function to convert date to dd/mm/yy format for all the rows in 'Repayment History' column.
+5. After the modification of date we have again transformed to string type so that we can load it in database. Dictionary type is not getting accepted in database.
+6. we have added extra column by calculating outstanding amount.
+
+Data Loading
+1. We have set a database named '5K_borrowers' using sqlite.
+2. The table is named as 'borrowers'.
+
+
+
+
+
+Analysis:
+
+a. What is the average loan amount for borrowers who are more than 5 days past due?
+Since the 'Days Left to Pay Current EMI' column is in positive value we are getting no data for average loan amount for more than 5days past due.
+
+b. Who are the top 10 borrowers with the highest outstanding balance?
+We have extracted 10 borrowers with highest outstanding history.Vaibhav Sharaf stands top
+
+
+
+c List of all borrowers with good repayment history
+The assumption here I have done is I have considered people who has dome repayment twice in good condition.
+3455 borrowers has good repayment history
+
+
+d Brief analysis wrt loan type
+By the query results we can infer that the most borrowers opted for Auto Loan are malayalies, the most borrowers opted for Personal Loan are Bengalies and most borrowers opted for Home Loan are Telugu speakers.
+And the suspicious thing ithat we can infer after the analysis is, 305 borrowers have opted for home loan for medical emergency purpose which we shall introspect.
+
+Aditya Gireesh
+7397260654
+Adityagireesh15@gmail.com
+
+
